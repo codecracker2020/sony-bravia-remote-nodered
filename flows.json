@@ -1,0 +1,137 @@
+[
+    {
+        "id": "722bcba1.573a84",
+        "type": "tab",
+        "label": "Sony Remote",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "91d13448.464048",
+        "type": "bravia-ircc",
+        "z": "722bcba1.573a84",
+        "tv": "ffcc79f1.7e4068",
+        "ircc": "",
+        "name": "",
+        "x": 670,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "fff1c2ef.2622d",
+        "type": "inject",
+        "z": "722bcba1.573a84",
+        "name": "Mute",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 270,
+        "y": 340,
+        "wires": [
+            [
+                "2ec1b64a.8d90ba"
+            ]
+        ]
+    },
+    {
+        "id": "fc673d04.bd173",
+        "type": "inject",
+        "z": "722bcba1.573a84",
+        "name": "Vol -",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 270,
+        "y": 220,
+        "wires": [
+            [
+                "5fb6887a.f1aed8"
+            ]
+        ]
+    },
+    {
+        "id": "5fb6887a.f1aed8",
+        "type": "function",
+        "z": "722bcba1.573a84",
+        "name": "",
+        "func": "msg.payload='AAAAAQAAAAEAAAATAw==';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 460,
+        "y": 220,
+        "wires": [
+            [
+                "91d13448.464048"
+            ]
+        ]
+    },
+    {
+        "id": "2ec1b64a.8d90ba",
+        "type": "function",
+        "z": "722bcba1.573a84",
+        "name": "",
+        "func": "msg.payload='AAAAAQAAAAEAAAAUAw==';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470,
+        "y": 340,
+        "wires": [
+            [
+                "91d13448.464048"
+            ]
+        ]
+    },
+    {
+        "id": "6d9cfbc5.847174",
+        "type": "inject",
+        "z": "722bcba1.573a84",
+        "name": "Vol +",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 270,
+        "y": 280,
+        "wires": [
+            [
+                "3bd47232.85c14e"
+            ]
+        ]
+    },
+    {
+        "id": "3bd47232.85c14e",
+        "type": "function",
+        "z": "722bcba1.573a84",
+        "name": "",
+        "func": "msg.payload='AAAAAQAAAAEAAAASAw==';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 462,
+        "y": 280,
+        "wires": [
+            [
+                "91d13448.464048"
+            ]
+        ]
+    },
+    {
+        "id": "ffcc79f1.7e4068",
+        "type": "bravia-tv",
+        "z": "",
+        "name": "My Sony",
+        "host": "192.168.1.5",
+        "port": "80",
+        "psk": "513905"
+    }
+]
